@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Serviços</title>
+    <script src="https://kit.fontawesome.com/ac8ea249f4.js" defer="" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="home"><i class="fas fa-home"></i> Home</a>
+        <a href="index.html" class="lista-servicos"><i class="fa-solid fa-list-ul"></i> Lista de Serviços</a>
+        <h1>Cadastro de Serviços</h1>
+    </header>
+    <div class="form-container">
+        <div>
+            <label for="campoServico">Serviço</label>
+            <input type="text" id="campoServico" required>
+        </div>
+        <div>
+            <label for="campoPreco">Preço</label>
+            <input type="number" id="campoPreco" required placeholder="R$" step="0.01">
+        </div>
+        <div>
+            <label for="campoDuracao">Duração</label>
+            <input type="number" id="campoDuracao" required min="1" max="15">
+        </div>
+        <div class="botao-salvar">
+            <button id="botaoSalvar"><i class="fas fa-save"></i>Editar</button>
+        </div>
+    </div>
+
+    <script src="../script/serviços/cadastrar.js"></script>
+</body>
+</html>
