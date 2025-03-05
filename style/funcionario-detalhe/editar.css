@@ -1,0 +1,13 @@
+.botao-editar{
+    display: flex;
+    justify-content: center;
+}
+
+.botao-editar button{
+    margin: 15px;
+    font-size: 1.2rem;
+}
+
+.botao-editar button:active{
+    background-color: rgb(27, 124, 52);
+}

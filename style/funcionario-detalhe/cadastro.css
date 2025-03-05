@@ -1,0 +1,39 @@
+.home,
+.lista-funcionarios {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+.form-container{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 10px;
+}
+
+.nome label,
+.cargo label,
+.salario label,
+.departamento label,   
+.telefone label{
+    font-size: 1.2rem;
+    display: flex;
+    padding: 5px 0px;
+    font-weight: bold;
+    color: #646464;
+}
+
+.nome input,
+.cargo input,
+.salario input,
+.departamento input,  
+.telefone input{
+    display: flex;
+    width: 100%;
+    border: 1px solid #b8b5b5;
+    padding: 5px;
+    font-size: 1rem;
+}
