@@ -1,10 +1,10 @@
 let urlAPI = "https://public.franciscosensaulas.com";
-let tabelaTarefas = document.getElementById("tabela-tarefas");
-let botaoConsultarTarefas = document.getElementById("consultar-tarefas")
+let tabelaManutencoes = document.getElementById("tabela-manutencoes");
+let botaoConsultarManutencoes = document.getElementById("consultar-manutencoes")
 
 function atribuirCliqueBotoesExcluir () {
 
-    let botoesExcluir = document.getElementsByClassName("excluirTarefa");
+    let botoesExcluir = document.getElementsByClassName("excluirManutencoes");
     Array.from(botoesExcluir).forEach((botao) => {
         botao.addEventListener('click', excluir);
     });
@@ -38,7 +38,7 @@ async function excluir(evento) {
 }
 
 async function excluirTarefa(id) {
-    let url = `${urlAPI}/api/v1/trabalho/tarefas/${id}`
+    let url = `${urlAPI}/api/v1/trabalho/manutencao/${id}`
     console.log(url);
     
 
@@ -54,13 +54,13 @@ async function excluirTarefa(id) {
         icon: "success"
     });
     
-    consultarTarefas();
+    consultarManutencoes();
 
 }
 
 
-async function consultarTarefas() {
-    let url = `${urlAPI}/api/v1/trabalho/tarefas`
+async function consultarManutencoes() {
+    let url = `${urlAPI}/api/v1/trabalho/manutencoes`
 
     const resposta = await fetch(url);
 
@@ -70,24 +70,27 @@ async function consultarTarefas() {
     }
     
 
-    const tarefas = await resposta.json();
+    const Manutencoes = await resposta.json();
 
-    let tbody = tabelaTarefas.querySelector("tbody");
+    let tbody = tabelaManutencoes.querySelector("tbody");
     tbody.innerHTML = "";
 
 
-    tarefas.forEach(tarefa => {
+    Manutencoes.forEach(manutencao => {
         const colunas = `
-         <td>${tarefa.id}</td>
-        <td>${tarefa.descricao}</td>
-        <td>${tarefa.prioridade}</td>
-        <td>${tarefa.horasEstimadas}</td>
+         <td>${manutencao.id}</td>
+        <td>${manutencao.equipamento}</td>
+        <td>${manutencao.tipo}</td>
+        <td>${manutencao.custo}</td>
+        <td>${manutencao.tecnico}</td>
+        <td>${manutencao.dataManutencao}</td>
+        <td>${manutencao.status}</td>
         <td>
-            <a href="editar.html?id=${tarefa.id}" class="btn btn-warning"><i class="fas fa-pencil"></i> Editar</a>
+            <a href="editar.html?id=${manutencao.id}" class="btn btn-warning"><i class="fas fa-pencil"></i> Editar</a>
             <button 
-                class="btn btn-danger excluirTarefa" 
-                data-id="${tarefa.id}"
-                data-nome="${tarefa.descricao}"
+                class="btn btn-danger excluirManutencoes" 
+                data-id="${manutencao.id}"
+                data-nome="${manutencao.equipamento}"
                 ><i class="fas fa-trash"></i> Apagar
             </button>
         </td>`
@@ -97,7 +100,7 @@ async function consultarTarefas() {
 
         tbody.appendChild(linha);
 
-        console.log(tarefa);
+        console.log(manutencao);
    
     });
 
@@ -106,6 +109,6 @@ async function consultarTarefas() {
 
 }
 
-botaoConsultarTarefas.addEventListener("click", consultarTarefas);
+botaoConsultarManutencoes.addEventListener("click", consultarManutencoes);
 
-consultarTarefas();
+consultarManutencoes();

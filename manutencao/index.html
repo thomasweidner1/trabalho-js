@@ -13,28 +13,30 @@
     <header>
         <h1> Colocar links abas aqui!</h1>
         <a href="/index.html"> Home</a>
-        <a href="/manutencao/index.html"> Manutenção</a>
+        <a href="index.html"> Manutenção</a>
         <a href="/serviços/index.html"> Serviços</a>
-        <a href="index.html"> Tarefas</a>
+        <a href="/tarefas/index.html"> Tarefas</a>
     </header>
 
     <div>
-        <button id="consultar-tarefas">
-            <i class="fas fa-spinner"></i> Consultar Tarefas
+        <button id="consultar-manutencoes">
+            <i class="fas fa-spinner"></i> Consultar Manutenções
         </button>
-        <a href="cadastro.html"><i class="fas fa-plus"></i> Cadastrar Tarefas</a>
+        <a href="cadastro.html"><i class="fas fa-plus"></i> Cadastrar Manutenções</a>
     </div>
 
 
     <div class="">
-        <table id="tabela-tarefas">
-            <thead class="tabela-tarefas">
+        <table id="tabela-manutencoes">
+            <thead class="tabela-manutencoes">
                 <tr>
                     <th>Código</th>
-                    <th>Descrição</th>
-                    <th>Nível de Prioridade</th>
-                    <th>Tempo Estimado</th>
-                    <th>Ações</th>
+                    <th>Equipamento</th>
+                    <th>Tipo</th>
+                    <th>Custo</th>
+                    <th>Técnico</th>
+                    <th>Data de Manutenção</th>
+                    <th>Status</th>
                 </tr>
                 <tbody>
 
@@ -47,7 +49,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-    <script src="../script/tarefas/index-tarefas.js"></script>
+    <script src="../script/manutencao/manutencao-index.js"></script>
 
 
 
