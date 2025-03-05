@@ -1,9 +1,9 @@
 let urlAPI = "https://public.franciscosensaulas.com/";
-let botaoListarServicos = document.getElementById("listarServicos");
-let tabelaServicos = document.getElementById("tableServicos");
+let botaoListarFuncionarios = document.getElementById("listarFuncionarios");
+let tabelaFuncionarios = document.getElementById("tableFuncionarios");
 
 function atribuirCliqueBotaoExcluir(){
-    let botaoExcluir = document.getElementsByClassName("excluirServico");
+    let botaoExcluir = document.getElementsByClassName("excluirFuncionario");
 
     Array.from(botaoExcluir).forEach((botao) => {
         botao.addEventListener("click", excluir);
@@ -17,7 +17,7 @@ async function excluir(event) {
     const nome = buttonClick.getAttribute("data-nome");
 
     Swal.fire({
-        title: `Deseja excluir o serviço ${nome}?`,
+        title: `Deseja excluir ${nome}?`,
         text: "Esta ação não pode ser desfeita!",
         icon: "warning",
         showCancelButton: true,
@@ -28,35 +28,37 @@ async function excluir(event) {
         reverseButtons: true
     }).then((result) => {
         if (result.isConfirmed) {
-            excluirServico(id);
+            excluirFuncionario(id);
         }
     });
 }
 
-async function listarServicos() {
-    let url = urlAPI + "api/v1/trabalho/servicos"
+async function listarFuncionarios() {
+    let url = urlAPI + "api/v1/trabalho/funcionarios-detalhes"
 
     const resposta = await fetch(url);
     if (resposta.ok == false) {
-        alert("Não foi possível listar nenhum serviço!")
+        alert("Não foi encontrado nenhum colaborador!")
     }
 
-    const servicos = await resposta.json();
+    const funcionarios = await resposta.json();
 
-    let tbody = tabelaServicos.querySelector("tbody");
+    let tbody = tabelaFuncionarios.querySelector("tbody");
     tbody.innerHTML = "";
 
-    servicos.forEach(servico => {
+    funcionarios.forEach(funcionario => {
         const colunas = ` 
-        <td>${servico.id}</td>
-        <td>${servico.nome}</td>
-        <td>${servico.preco}</td>
-        <td>${servico.duracao}</td>
+        <td>${funcionario.id}</td>
+        <td>${funcionario.nome}</td>
+        <td>${funcionario.cargo}</td>
+        <td>${funcionario.salario}</td>
+        <td>${funcionario.departamento}</td>
+        <td>${funcionario.telefone}</td>
         <td>
-        <a href="editar.html?id=${servico.id}" class="botao-editar"><i class="fas fa-pencil"></i> Editar</a>
-        <button class="excluirServico" 
-            data-id=${servico.id}
-            data-nome=${servico.nome}
+        <a href="editar.html?id=${funcionario.id}" class="botao-editar"><i class="fas fa-pencil"></i> Editar</a>
+        <button class="excluirFuncionario" 
+            data-id=${funcionario.id}
+            data-nome=${funcionario.nome}
             ><i class="fas fa-trash"></i> Excluir</button>
         </td>`
         const linha = document.createElement("tr");
@@ -64,15 +66,15 @@ async function listarServicos() {
 
         tbody.appendChild(linha);
 
-        console.log(servico);
+        console.log(funcionario);
     });
     
     atribuirCliqueBotaoExcluir();
 };
 
 
-async function excluirServico(id) {
-    let url = `${urlAPI}api/v1/trabalho/servicos/${id}`;
+async function excluirFuncionario(id) {
+    let url = `${urlAPI}api/v1/trabalho/funcionarios-detalhes/${id}`;
     console.log(url);
 
     const resposta = await fetch(url, {
@@ -88,10 +90,10 @@ async function excluirServico(id) {
         text: "Serviço excluído com sucesso",
         icon: "success"
     });
-    listarServicos();
+    listarFuncionarios();
 }
 
 
-botaoListarServicos.addEventListener("click", listarServicos);
+botaoListarFuncionarios.addEventListener("click", listarFuncionarios);
 
-listarServicos();
+listarFuncionarios();

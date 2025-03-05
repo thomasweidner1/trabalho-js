@@ -1,12 +1,24 @@
-header{
+header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: #fff;
 }
 
-header .lista-servicos{
+header h1 {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.home,
+.lista-servicos {
     text-decoration: none;
     color: #fff;
     font-size: 1.2rem;
+    white-space: nowrap;
 }
 
 .form-container{
