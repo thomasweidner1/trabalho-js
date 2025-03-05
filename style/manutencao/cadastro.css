@@ -1,0 +1,70 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: #fff;
+}
+
+header h1 {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.home,
+.lista-manutencao {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+.form-container{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 10px;
+}
+
+.nome label,
+.tipo label,
+.custo label,
+.tecnico label,
+.data label,
+.status label{
+    font-size: 1.2rem;
+    display: flex;
+    padding: 5px 0px;
+    font-weight: bold;
+    color: #646464;
+}
+
+.nome input,
+.tipo select,
+.custo input,
+.tecnico input,
+.data input,
+.status select{
+    display: flex;
+    width: 100%;
+    border: 1px solid #b8b5b5;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.botao-salvar{
+    display: flex;
+    justify-content: center;
+}
+
+.botao-salvar button{
+    margin: 15px;
+    font-size: 1.2rem;
+}
+
+.botao-salvar button:active{
+    background-color: rgb(27, 124, 52);
+}

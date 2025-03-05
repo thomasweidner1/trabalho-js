@@ -86,9 +86,9 @@ async function consultarManutencoes() {
         <td>${manutencao.dataManutencao}</td>
         <td>${manutencao.status}</td>
         <td>
-            <a href="editar.html?id=${manutencao.id}" class="btn btn-warning"><i class="fas fa-pencil"></i> Editar</a>
+            <a href="editar.html?id=${manutencao.id}" class="botao-editar"><i class="fas fa-pencil"></i> Editar</a>
             <button 
-                class="btn btn-danger excluirManutencoes" 
+                class="excluirManutencoes" 
                 data-id="${manutencao.id}"
                 data-nome="${manutencao.equipamento}"
                 ><i class="fas fa-trash"></i> Apagar
