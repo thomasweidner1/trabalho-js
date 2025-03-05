@@ -20,35 +20,37 @@
         <h1>Cadastro de Funcionários</h1>
         <a href="index.html" class="lista-funcionarios"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
     </header>
-    <div class="form-container">
-        <div class="nome">
-            <label for="campoNome">Nome</label>
-            <input type="text" id="campoNome" required>
+    <form action="#">
+        <div class="form-container">
+            <div class="nome">
+                <label for="campoNome">Nome</label>
+                <input type="text" id="campoNome" required>
+            </div>
+            <div class="cargo">
+                <label for="campoCargo">Cargo</label>
+                <input type="text" id="campoCargo" required min="1" max="20">
+            </div>
+            <div class="salario">
+                <label for="campoSalario">Salário</label>
+                <input type="number" id="campoSalario" required placeholder="R$" step="0.01">
+            </div>
+            <div class="departamento">
+                <label for="campoDepartamento">Departamento</label>
+                <input type="text" id="campoDepartamento" required>
+            </div>
+            <div class="telefone">
+                <label for="campoTelefone">Telefone</label>
+                <input type="text" id="campoTelefone" required>
+            </div>
+            <div class="botao-salvar">
+                <button id="botaoSalvar"><i class="fas fa-save"></i> Cadastrar</button>
+            </div>
         </div>
-        <div class="cargo">
-            <label for="campoCargo">Cargo</label>
-            <input type="text" id="campoCargo" required min="1" max="20">
-        </div>
-        <div class="salario">
-            <label for="campoSalario">Salário</label>
-            <input type="number" id="campoSalario" required placeholder="R$" step="0.01">
-        </div>
-        <div class="departamento">
-            <label for="campoDepartamento">Departamento</label>
-            <input type="text" id="campoDepartamento" required>
-        </div>
-        <div class="telefone">
-            <label for="campoTelefone">Telefone</label>
-            <input type="text" id="campoTelefone" required>
-        </div>
-        <div class="botao-salvar">
-            <button id="botaoSalvar"><i class="fas fa-save"></i> Cadastrar</button>
-        </div>
-    </div>
+    </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/imask"></script>    
+    <script src="https://unpkg.com/imask"></script>
     <script src="../script/funcionario-detalhe/cadastro.js"></script>
 </body>
 
