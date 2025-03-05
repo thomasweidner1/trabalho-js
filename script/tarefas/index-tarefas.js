@@ -81,7 +81,7 @@ async function consultarTarefas() {
          <td>${tarefa.id}</td>
         <td>${tarefa.descricao}</td>
         <td>${tarefa.prioridade}</td>
-        <td>${tarefa.horasEstimadas}</td>
+        <td>${tarefa.horasEstimadas} hora</td>
         <td>
             <a href="editar.html?id=${tarefa.id}" class="botao-editar"><i class="fas fa-pencil"></i> Editar</a>
             <button class="excluirTarefa" 

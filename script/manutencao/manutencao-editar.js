@@ -3,6 +3,13 @@ const params = new URLSearchParams(url.search);
 const idParaEditar = params.get("id");
 const urlAPI = "https://public.franciscosensaulas.com"
 
+const campoData = document.getElementById('campoData');
+const mascara = {
+    mask: "00/00/0000"
+};
+const mask = IMask(campoData, mascara);
+
+
 async function consultarDadosManutencaoPorId() {
     const urlParaConsultarManutencao = `${urlAPI}/api/v1/trabalho/manutencoes/${idParaEditar}`
     console.log(urlParaConsultarManutencao);
