@@ -10,9 +10,9 @@ function atribuirCliqueBotaoExcluir(){
     });
 };
 
-async function excluir(evento) {
-    evento.preventDefault();
-    const buttonClick = evento.target;
+async function excluir(event) {
+    event.preventDefault();
+    const buttonClick = event.target;
     const id = buttonClick.getAttribute("data-id")
     const nome = buttonClick.getAttribute("data-nome");
 
@@ -50,9 +50,10 @@ async function listarServicos() {
         const colunas = ` 
         <td>${servico.id}</td>
         <td>${servico.nome}</td>
-        <td>${servico.cnpj}</td>
+        <td>${servico.preco}</td>
+        <td>${servico.duracao}</td>
         <td>
-        <a href="editar.html?id=${servico.id}" class="botao-editar"><i class="fas fa-pencil"></i> Editar</a>
+        <a href="editar.html?id=${servico.id}" class="botao-editar" target="_blank"><i class="fas fa-pencil"></i> Editar</a>
         <button class="excluirServico" 
             data-id=${servico.id}
             data-nome=${servico.nome}
