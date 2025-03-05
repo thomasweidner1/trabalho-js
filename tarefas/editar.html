@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Editar Cadastro</title>
+    <link rel="stylesheet" href="../style/tarefas/editar.css">
+    <link rel="stylesheet" href="../style/tarefas/cadastro.css">
+    <link rel="stylesheet" href="../style/tarefas/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/80793a8067.js" defer crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
-        <h1> Colocar links abas aqui!</h1>
-        <a href="/index.html"> Home</a>
-        <a href="/manutencao/index.html"> Manutenção</a>
-        <a href="/serviços/index.html"> Serviços</a>
-        <a href="index.html"> Tarefas</a>
-    </header>
-    
-    <div class="text-center">
+        <a href="../index.html" class="home"><i class="fas fa-home"></i> Home</a>
         <h1 class="titulo"> Editar Cadastros</h1>
+        <a href="index.html" class="lista-tarefas"> Tarefas</a>
+    </header>
+
     </div>
     <form action="#">
-        <div>
-            <label for="campoNome"> Nome da Tarefa</label>
-            <input type="text" id="campoNome" class="">
-        </div>
+        <div class="form-container">
+            <div class="nome">
+                <label for="campoNome"> Nome da Tarefa</label>
+                <input type="text" id="campoNome">
+            </div>
 
-        <div>
-            <label for="campoPrioridade"> Nível de prioridade</label>
-            <select name="prioridade" id="campoPrioridade">
-                <option disabled selected>Selecione uma opção</option>
-                <option value="1">Alta</option>
-                <option value="2">Média</option>
-                <option value="3">Baixa</option>
-            </select>
-        </div>
-        
-        <div>
-            <label for="campoTempo"> Tempo Estimado</label>
-            <input type="number" id="campoTempo" class="">            
-        </div>
+            <div class="prioridade">
+                <label for="campoPrioridade"> Nível de prioridade</label>
+                <select name="prioridade" id="campoPrioridade">
+                    <option disabled selected>Selecione uma opção</option>
+                    <option value="1">Alta</option>
+                    <option value="2">Média</option>
+                    <option value="3">Baixa</option>
+                </select>
+            </div>
 
-        <div>
-            <button class="btn btn-success" id="botao-alterar"><i class="fas fa-floppy-disk"></i> Alterar</button>
+            <div class="tempo">
+                <label for="campoTempo"> Tempo Estimado</label>
+                <input type="number" id="campoTempo">
+            </div>
+
+            <div class="botao-editar">
+                <button id="botao-alterar"><i class="fas fa-floppy-disk"></i> Alterar</button>
+            </div>
         </div>
     </form>
 
@@ -55,4 +57,5 @@
 
 
 </body>
+
 </html>
